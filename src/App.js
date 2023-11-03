@@ -1,8 +1,14 @@
 
-import "./App.css";
+
+import Body from './Components/Body';
+
 
 function App() {
-  return <div className="bg-black text-white">hello</div>;
+  return (
+    <>
+    <Body/>
+    </>
+  )
 }
 
 export default App;
