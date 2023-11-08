@@ -5,16 +5,22 @@ import { Checkvalidata } from "../utils/FormValidation";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/Firebase";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/UserSlice";
+
 
 const Login = () => {
+  
   const [IsSignInform, setIsSignInForm] = useState(true);
   const [ErrorMessage, setErrorMesssage] = useState(null);
   const Navigate = useNavigate();
+  const Dispatch = useDispatch()
 
-  // const name = useRef(null);
+  const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null); 
 
@@ -39,7 +45,30 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          Navigate("/browse")
+          //update profile logic
+
+          updateProfile(user, {
+            displayName: name.current.value,
+            photoURL: "https://avatars.githubusercontent.com/u/123448064?v=4",
+          })
+            .then(() => {
+              // Profile updated!
+             const { uid, email, displayName, photoURL } = auth.currentUser;
+             Dispatch(
+               addUser({
+                 uid: uid,
+                 email: email,
+                 displayName: displayName,
+                 photoURL: photoURL,
+               })
+             );
+              Navigate("/browse");
+            })
+            .catch((error) => {
+              // An error occurred
+              setErrorMesssage(error.message);
+            });
+         
           // ...
         })
         .catch((error) => {
@@ -90,7 +119,7 @@ const Login = () => {
 
         {!IsSignInform && (
           <input
-            // ref={name}
+            ref={name}
             type="text"
             placeholder="Full Name"
             className=" my-4 p-4 w-full rounded-md bg-gray-900"
