@@ -8,16 +8,19 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/Firebase";
-import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/UserSlice";
+
+import { IMG_URL } from "../utils/constant";
+
 
 
 const Login = () => {
   
   const [IsSignInform, setIsSignInForm] = useState(true);
   const [ErrorMessage, setErrorMesssage] = useState(null);
-  const Navigate = useNavigate();
+  
   const Dispatch = useDispatch()
 
   const name = useRef(null);
@@ -48,21 +51,20 @@ const Login = () => {
           //update profile logic
 
           updateProfile(user, {
-            displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/123448064?v=4",
+            displayName: name?.current?.value,
+            photoURL: IMG_URL,
           })
             .then(() => {
               // Profile updated!
-             const { uid, email, displayName, photoURL } = auth.currentUser;
-             Dispatch(
-               addUser({
-                 uid: uid,
-                 email: email,
-                 displayName: displayName,
-                 photoURL: photoURL,
-               })
-             );
-              Navigate("/browse");
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+              Dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
             })
             .catch((error) => {
               // An error occurred
@@ -85,7 +87,7 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          Navigate("/browse")
+          
           // ...
         })
         .catch((error) => {
