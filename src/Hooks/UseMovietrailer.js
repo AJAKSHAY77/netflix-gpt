@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { options_api } from '../utils/constant';
 import { addtrailerVideo } from '../utils/Movieslice';
@@ -9,13 +9,15 @@ const UseMovietrailer = (movieid) => {
   //fetch  trailer video
   const getMovieVideos = async () => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/movie/" + movieid + "/videos?languange=en-us",
+      "https://api.themoviedb.org/3/movie/" +
+        movieid +
+        "/videos?languange=en-us",
       options_api
     );
     const json = await data.json();
-    console.log("the trailer api", json.results);
+    //console.log("the trailer api", json.results);
     const Filter_data = json.results.filter((el) => el.type === "Trailer");
-    console.log("trailer_apiresult ", Filter_data);
+    //console.log("trailer_apiresult ", Filter_data);
     //giving two trailers
     //we will choose one
     const trailer = Filter_data.length ? Filter_data[0] : json.results[0];

@@ -15,3 +15,5 @@ export const options_api = {
 };
 
 export const MovieList_API = "https://api.themoviedb.org/3/movie/now_playing?page=1";
+
+export const Img_cdn_url = "https://image.tmdb.org/t/p/w500";
