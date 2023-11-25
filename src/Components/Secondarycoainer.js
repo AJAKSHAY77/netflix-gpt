@@ -12,7 +12,7 @@ const Secondarycoainer = () => {
           movies={movies.nowPlayingMovies}
         />
         <Movielist title={"popular"} movies={movies.popularMovies} />
-        <Movielist title={"Horrar Movies"} movies={movies.nowPlayingMovies} />
+        <Movielist title={"Top Rated"} movies={movies.topratedMovies} />
         <Movielist title={"Comedy Movies"} movies={movies.nowPlayingMovies} />
       </div>
     </div>

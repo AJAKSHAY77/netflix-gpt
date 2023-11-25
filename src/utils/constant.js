@@ -17,3 +17,13 @@ export const options_api = {
 export const MovieList_API = "https://api.themoviedb.org/3/movie/now_playing?page=1";
 
 export const Img_cdn_url = "https://image.tmdb.org/t/p/w500";
+
+export const Bg_IMG =
+  "https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-ae88-c201ae0267e2/0efe6360-4f6d-4b10-beb6-81e0762cfe81/IN-en-20231030-popsignuptwoweeks-perspective_alpha_website_large.jpg";
+
+
+export const Supported_langauge = [
+  { identifier: "en", name: "English" },
+  { identifier: "hindi", name: "Hindi" },
+  { identifier: "spanish", name: "Spanish" },
+];
