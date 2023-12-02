@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeuser } from "../utils/UserSlice";
 import { LOGO, Supported_langauge } from "../utils/constant";
-import { ToggleGptSearchView } from "../utils/GptSearchSlice";
+import { ToggleGptSearchView, resetGptData } from "../utils/GptSearchSlice";
 import { changeLanguage } from "../utils/ConFigSlice";
 
 const Header = () => {
@@ -32,10 +32,11 @@ const Header = () => {
 
   const HandlGptSearchClick = () => {
     Dispatch(ToggleGptSearchView());
+    //  Dispatch(resetGptData());
   };
 
   const handlelanguagechange = (e) => {
-    Dispatch(changeLanguage(e.target.value))
+    Dispatch(changeLanguage(e.target.value));
   };
 
   //user authentication  changes
@@ -64,11 +65,11 @@ const Header = () => {
     return () => Unsuscribe();
   }, []);
   return (
-    <div className="absolute px-8 py-2 bg-gradient-to-b from-black z-10 w-screen flex justify-between  items-center">
-      <img className="w-44" src={LOGO} alt="logo" />
+    <div className="absolute px-8 py-2 bg-gradient-to-b from-black z-10 w-screen flex flex-col md:flex-row justify-between  items-center">
+      <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="logo" />
 
       {user && (
-        <div className="flex gap-3">
+        <div className="flex gap-3 justify-between">
           {showGptsearch && (
             <select
               onChange={handlelanguagechange}
@@ -87,7 +88,11 @@ const Header = () => {
           >
             {showGptsearch ? "Home" : "GptSearch"}
           </button>
-          <img src={user?.photoURL} className="w-12 h-12" alt="usericon" />
+          <img
+            src={user?.photoURL}
+            className=" hidden md:block w-12 h-12"
+            alt="usericon"
+          />
 
           <button onClick={handleSignout} className="font-bold text-white">
             (Sign out)

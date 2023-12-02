@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Netflix-GPT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-Create React App
+-configured tailwindCss
 
-## Available Scripts
+ -Header -Routing of App -Login From -Sign In -Sign Up -From validation
 
-In the project directory, you can run:
+UseRef Hook
+Firebase Setup
+Deploying our app to production
+Create SignUp User Account
+implment sign In user APi
+Created Redux Store With UserSlices
+Implment Sign Out
+update Profile
+BugFix:Sign up user displayName and Profile picture updates
+BugFix: If this user is not logged in Redirect/ browse to Login Page and Vice-Versa
+Unsubscibed to the onAuthStateChanged Callback
+Add HardCode Value to the Constants Files..
+Regiter TMDB Api & Create an app & get access token..
+GET Data from TMDB Now playing Movies List Api..
+Custom Hooks for TrailerMoive
+Create MoiveSlices
+Updating the store with Moive data
+Planning for MainConatainer or Secondary Conatiner
+Fetch data for Tralier Vedio
+Embedded the YouTube Vedio & make it AutoPlay and mute
+Tailwind CSS to Make mainContainer looks awesome..
+Build the Secondary Component
+Build MovieList..
+Build MovieCard..
+TMDB Image CDN URl
+Made the browsre page amazing with the TailwindCss
+Use PopularMovies Custom
+Use TrendingMovies Custom
+Use UpcomingMovies Custom
+GPT Search Page
+Gpt Search Bar
+(FEATURE) Multi-Language Feature in our app..
+Get Open AI Api key
+Get Search Api Call
+Fetched MovieGptSuggestion from TMDB
+Created GptSlices added a data
+Resused MoviesList Components to make movies Suggestion container
+Memoization
+Added .env file
+Adding .env file .gitinore
+Made are Site Responsive
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-Login/Sign Up
+ -Sign In/sign up from 
+ -redirect to Browser page
+  -Browser
+   -Header
+    -main Moive
+     -tailer in background 
+     -Title & disiceiption
+      -MoiveSuggestion
+       -MoiveLists * N
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-NetflixGpt -Search Bar
+ -Moive Suggestion
