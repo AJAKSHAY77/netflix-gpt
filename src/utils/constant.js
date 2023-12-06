@@ -27,5 +27,5 @@ export const Supported_langauge = [
   { identifier: "spanish", name: "Spanish" },
 ];
 
-export const OPENAI_KEY = "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";
+export const OPENAI_KEY = "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";
 
